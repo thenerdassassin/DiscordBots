@@ -61,7 +61,7 @@ async def send_messages():
     global last_run
     global current_time
     current_time = time.time()
-    channel = client.get_channel(config.channel_id)
+    channel = client.get_channel(int(config.channel_id))
     for collection in config.collection_addresses:
         print(f'Getting Listings for {collection}')
         await sendLatestEvents(channel, collection, last_run, current_time)
