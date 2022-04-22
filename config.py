@@ -6,7 +6,9 @@ import os
 # This is also how you will invite the bot to your server.
 
 token = os.getenv("DISCORD_BOT_TOKEN")
-if token == None: raise(Exception("No Discord Bot Token"))
+
+# For post-only bots that post to a single channel, a webhook can be a simpler method
+webhook_url = os.getenv("WEBHOOK_URL")
 
 # Command prefix
 prefix = ""
