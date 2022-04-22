@@ -74,8 +74,15 @@ def run_bot_sync():
         print(f'Getting Listings for {collection}')
         currentEvents = getEvents(start_time, end_time, collection)
 
+        #Deduplicate, take most recent
+        nfts_to_report = []
+        unique_names = list(set([ x['asset']['name'] for x in currentEvents['asset_events']]))
+        for n in unique_names:
+            nfts_to_report.append([x for x in currentEvents['asset_events'] if x['asset']['name'] == n][-1])
+        
+
         #Send via Webhook        
-        for event in currentEvents['asset_events']:
+        for event in nfts_to_report:
             print(f'Found listing for {getTitleFromEvent(event)}')
             embed = convertEventToEmbed(event)
             webhook.add_embed(embed)
