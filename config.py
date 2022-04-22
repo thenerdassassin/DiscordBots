@@ -4,7 +4,6 @@ import os
 # Follow this guide if you need help: https://www.writebots.com/discord-bot-token/
 # Make sure to enable both privileged intents on the bot tab.
 # This is also how you will invite the bot to your server.
-
 token = os.getenv("DISCORD_BOT_TOKEN")
 
 # For post-only bots that post to a single channel, a webhook can be a simpler method
@@ -19,11 +18,11 @@ description = ""
 # ID of the guild
 # To find this, go to your discord settings > advanced > enable developer mode
 # Then, right click the guild picture on the left sidebar and click copy ID
-guild_id = 896049791656689664
+guild_id = 0
 
 # Time (in minutes) between checking for new sales
 # All sales are always sent, no matter how often we check
-update_interval = 60
+update_interval = 5
 
 # OpenSea API key. Get yours here https://docs.opensea.io/reference/request-an-api-key
 
@@ -32,7 +31,7 @@ api_key = os.getenv("OPENSEA_API_KEY")
 # Channel to send listings messages in
 # To find this, go to your discord settings > advanced > enable developer mode
 # Then, right click the channel name on the left sidebar and click copy ID
-channel_id = 966539982892310538
+channel_id = 0
 
 # Contract Address
 # To find this, go to the OpenSea page for the collection and click on the Etherscan button.
