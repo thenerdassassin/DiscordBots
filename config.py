@@ -1,16 +1,10 @@
 import os
 
-# Create a bot application and get its token at the Discord Developer Portal.
-# Follow this guide if you need help: https://www.writebots.com/discord-bot-token/
-# Make sure to enable both privileged intents on the bot tab.
-# This is also how you will invite the bot to your server.
-token = os.getenv("DISCORD_BOT_TOKEN")
-
 # For post-only bots that post to a single channel, a webhook can be a simpler method
-webhook_url = os.getenv("WEBHOOK_URL")
-
-# Command prefix
-prefix = ""
+webhook_url = {
+    "successful":"",
+    "created": ""
+}
 
 # Bot description shown in the help menu
 description = ""
