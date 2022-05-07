@@ -35,7 +35,7 @@ def getTitleFromEvent(event):
 # See: https://discordpy.readthedocs.io/en/stable/api.html#embed
 def convertEventToEmbed(event, eventType):
     if (eventType == 'successful'):
-        embedTitle = f'{getTitleFromEvent(event)} was sold!'
+        embedTitle = f'Dapper Dino {getTitleFromEvent(event)} was purchased!'
     elif (eventType == 'created'):
         embedTitle = f'{getTitleFromEvent(event)} was listed!'
     embed = DiscordEmbed(title=embedTitle, url=event.get("asset").get("permalink"))
