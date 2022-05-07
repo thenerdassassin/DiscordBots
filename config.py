@@ -1,9 +1,10 @@
 import os
 
 # For post-only bots that post to a single channel, a webhook can be a simpler method
+# Different Webhook URLs for different channels for OS Sales and Listings. From env variables.
 webhook_url = {
-    "successful":"",
-    "created": ""
+    "successful":os.getenv("DISCORD_WEBHOOKURL_SALES"),
+    "created": os.getenv("DISCORD_WEBHOOKURL_LISTINGS")
 }
 
 # Bot description shown in the help menu
