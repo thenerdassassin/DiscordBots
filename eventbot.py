@@ -35,11 +35,11 @@ def getTitleFromEvent(event):
 # See: https://discordpy.readthedocs.io/en/stable/api.html#embed
 def convertEventToEmbed(event, eventType):
     if (eventType == 'successful'):
-        embedTitle = f'{getTitleFromEvent(event)} was sold!'
+        embedTitle = f'{getTitleFromEvent(event)} was purchased!'
     elif (eventType == 'created'):
         embedTitle = f'{getTitleFromEvent(event)} was listed!'
     embed = DiscordEmbed(title=embedTitle, url=event.get("asset").get("permalink"))
-    embed.set_image(url=event.get("asset").get("image_thumbnail_url"))
+    embed.set_image(url=event.get("asset").get("image_original_url"))
 
     if (eventType == 'successful'):
         embed.add_embed_field(name="Sale Price", value=convertPriceToETH(event.get("total_price")), inline=False)
